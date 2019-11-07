@@ -16,7 +16,7 @@ class AdapterRecyclerParty : RecyclerView.Adapter<TaskViewHolver>() {
     }
 
     override fun getItemCount(): Int {
-        return 100
+        return 2
     }
 
     override fun onBindViewHolder(holder: TaskViewHolver, position: Int) {

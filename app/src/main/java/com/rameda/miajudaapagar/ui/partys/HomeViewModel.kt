@@ -1,4 +1,4 @@
-package com.rameda.miajudaapagar.ui.home
+package com.rameda.miajudaapagar.ui.partys
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

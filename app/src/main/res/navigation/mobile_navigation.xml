@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.rameda.miajudaapagar.ui.home.HomeFragment"
+        android:name="com.rameda.miajudaapagar.ui.partys.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 

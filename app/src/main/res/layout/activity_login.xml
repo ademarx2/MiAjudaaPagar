@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/black"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <EditText
         android:id="@+id/et_username"
@@ -12,6 +12,7 @@
         android:layout_width="275dp"
         android:layout_height="41dp"
         android:layout_marginStart="50dp"
+
         android:layout_marginTop="16dp"
         android:layout_marginEnd="50dp"
         android:autofillHints=""
@@ -20,6 +21,7 @@
         android:hint="Username or Email"
         android:padding="5dip"
         android:textColor="#5F5959"
+        android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
@@ -31,10 +33,12 @@
         android:layout_marginTop="16dp"
         android:autofillHints=""
         android:background="@drawable/ic_redondo_border"
+
         android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:hint="Password"
         android:padding="5dip"
         android:textColor="#5F5959"
+        android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_username" />
@@ -86,9 +90,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="@color/whrite"
         android:layout_marginEnd="32dp"
         android:text="Forgot Password"
+        android:textColor="@color/whrite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/angry_btn" />
 
@@ -98,9 +102,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="32dp"
-        android:textColor="@color/whrite"
         android:layout_marginEnd="50dp"
         android:text="Don't have Acoount? Sign Up"
+        android:textColor="@color/whrite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_esqueceuPassword" />
@@ -110,7 +114,7 @@
 
         android:id="@+id/view"
         android:layout_width="0dp"
-        android:layout_height="2dp"
+        android:layout_height="1dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:background="#Fff"
@@ -144,4 +148,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_avisopagilogin"
         app:layout_constraintVertical_bias="0.044" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_button"
+        android:layout_width="313dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.043" />
 </androidx.constraintlayout.widget.ConstraintLayout>
