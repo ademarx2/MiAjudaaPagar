@@ -18,6 +18,15 @@ import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.util.Log
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_login.angry_btn
+import kotlinx.android.synthetic.main.row_party_list.*
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.Retrofit
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 
 class LoginActivity : AppCompatActivity() {
@@ -28,37 +37,13 @@ class LoginActivity : AppCompatActivity() {
 
         setContentView(com.rameda.miajudaapagar.R.layout.activity_login)
         supportActionBar?.hide()
-        var a = 0
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://miajuda-a-pagar.firebaseio.com/")//url of firebase app
+            .addConverterFactory(GsonConverterFactory.create())//use for convert JSON file into object
+            .build()
         angry_btn.setOnClickListener {
-         //startActivity(Intent(this,MainActivity::class.java))
+         startActivity(Intent(this,MainActivity::class.java))
             // Write a message to the database
-            val database = FirebaseDatabase.getInstance()
-            val myRef = database.getReference("Group")
-            a=a+1
-            val myRef2 = database.getReference("Status")
-            myRef2.setValue("ativo")
-
-            myRef.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    // This method is called once with the initial value and again
-                    // whenever data at this location is updated.
-                    val value = dataSnapshot.getValue(String::class.java)
-                    Log.d("opa", "Value is: " + value!!)
-                    if (value.toInt()<=4){
-                        myRef.setValue(a.toString())
-                    }
-                    else{
-                        Toast.makeText(applicationContext,"PARTY FULL",Toast.LENGTH_LONG).show()
-                    }
-                }
-
-                override fun onCancelled(error: DatabaseError) {
-                    // Failed to read value
-                    Log.w("opa", "Failed to read value.", error.toException())
-                }
-            })
-
-
         }
     }
 

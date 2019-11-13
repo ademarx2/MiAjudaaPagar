@@ -52,6 +52,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.2.1'
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    implementation 'com.ramijemli.percentagechartview:percentagechartview:0.3.0'
+
+
+
 
 }
 apply plugin: 'com.google.gms.google-services'
