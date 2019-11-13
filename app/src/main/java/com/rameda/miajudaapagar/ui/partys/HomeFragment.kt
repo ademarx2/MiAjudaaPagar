@@ -43,7 +43,6 @@ class HomeFragment : Fragment() {
         //3 definir um layout
         mRecyclerTaskList.layoutManager = LinearLayoutManager(context)
         firebasemethod()
-
         return root
     }
     fun firebasemethod(){

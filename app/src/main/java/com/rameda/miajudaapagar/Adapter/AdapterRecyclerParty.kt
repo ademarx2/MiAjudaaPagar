@@ -24,10 +24,12 @@ class AdapterRecyclerParty : RecyclerView.Adapter<TaskViewHolver>() {
     }
 
     override fun getItemCount(): Int {
-        return 2
+        return 5
     }
 
     override fun onBindViewHolder(holder: TaskViewHolver, position: Int) {
+        holder.itemView.setOnClickListener{Log.e("accept","top")}
     }
 
 }
+
