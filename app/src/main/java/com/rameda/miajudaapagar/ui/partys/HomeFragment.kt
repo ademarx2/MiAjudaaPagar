@@ -18,12 +18,13 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.rameda.miajudaapagar.Adapter.AdapterRecyclerParty
 import com.rameda.miajudaapagar.R
+import com.rameda.miajudaapagar.firebase.firebaseAccess
 import kotlinx.android.synthetic.main.row_party_list.*
 
 class HomeFragment : Fragment() {
     private lateinit var mRecyclerTaskList: RecyclerView
     private lateinit var homeViewModel: HomeViewModel
-
+    val firebaseAccess: firebaseAccess? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,11 +50,8 @@ class HomeFragment : Fragment() {
 
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("Group")
-        var a = 0
-        a=a+1
         val myRef2 = database.getReference("Status")
-        myRef2.setValue("ativo")
-        myRef.addValueEventListener(object : ValueEventListener {
+        myRef2.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
@@ -61,12 +59,7 @@ class HomeFragment : Fragment() {
                 Log.d("opa", "Value is: " + value!!)
                 status_participation?.text = value.toString()
                 status_tv?.text = value.toString()
-                if (value.toInt()<=4){
-                    myRef.setValue(a.toString())
-                }
-                else{
-               //     Toast.makeText(Context,"PARTY FULL", Toast.LENGTH_LONG).show()
-                }
+
             }
 
             override fun onCancelled(error: DatabaseError) {
